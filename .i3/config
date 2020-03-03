@@ -461,6 +461,6 @@ exec --no-startup-id zotero
 exec --no-startup-id telegram-desktop
 exec --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpeg
-
+exec --no-startupi-id xinput set-prop "Synaptics TM2956-002" 318 1 #Set natural scrolling
         #Random Keybindings
 bindsym $mod+Shift+s exec shutter -s
