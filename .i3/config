@@ -459,7 +459,7 @@ exec --no-startup-id /home/alexselimov/.config/polybar/launch.sh
 exec --no-startup-id pcloud
 exec --no-startup-id zotero
 exec --no-startup-id telegram-desktop
-exec --no-startup-id picom
+exec --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpeg
 
         #Random Keybindings
