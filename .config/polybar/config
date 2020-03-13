@@ -5,7 +5,7 @@
 
 ;====General Settings======================================
 [colors]
-bg = #222D32
+bg = #263238
 fg = #CFD8DC
 adapta-cyan = #00BCD4
 adapta-red = #FF5252
@@ -44,7 +44,7 @@ tray-scale = 1.0
 
 
 ;====Module settings+======================================
-modules-left = arch i3 pkg
+modules-left = arch i3 filesytem pkg
 modules-center = date
 modules-right = volume wlan cpu-graph memory battery powermenu
 ;==========================================================
@@ -271,6 +271,26 @@ content-margin = 1
 content-foreground = ${colors.fg}
 content-underline = ${colors.adapta-cyan}
 click-left = xdg-open https://www.youtube.com/ &
+
+[module/filesystem]
+type = internal/fs
+filesystem-type = HDD
+; Mountpoints to display
+mount-0 = /
+mount-1 = /home
+mount-2 = /var
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
 ;==========================================================
 
 
@@ -465,4 +485,5 @@ content-underline = ${colors.adapta-cyan}
 content-foreground = ${colors.fg}
 click-left = pmenu_1
 click-right = pmenu_1
+
 ;==========================================================

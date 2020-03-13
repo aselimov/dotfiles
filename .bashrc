@@ -153,5 +153,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-#Source bash_aliases
+#bash aliases
 alias config='/usr/bin/git --git-dir=/home/alexselimov/.cfg/ --work-tree=/home/alexselimov'
+alias octave=octave-cli
+alias gits='git status -uno'
