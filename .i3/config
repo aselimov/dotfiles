@@ -1,4 +1,4 @@
-# i3 config file (v4)
+#a i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -210,11 +210,14 @@ assign [class="qutebrowser"] $ws6
 assign [class="Ovito"] $ws7
 assign [class="ParaView"] $ws7
 assign [class="TelegramDesktop"] $ws8
+assign [class="Chromium"] $ws8
 assign [class="Zotero"] $ws4
 assign [class="Cisco AnyConnect Secure Mobility Client"] $ws5
+assign [class="Brave-browser"] $ws6
+assign [class="x2goclient"] $ws9
+assign [class="Chromium"] $ws8
 
 for_window [class="Spotify"] move to workspace $ws5
-for_window [class="Brave-browser"] move to workspace $ws8
 
 
 
@@ -248,7 +251,10 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
 for_window [class="Shutter"] floating enable border normal
+for_window [class="Pcmanfm"] floating enable border normal
 for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable border normal
+for_window [class="matplotlib"] floating enable border normal
+for_window [class="Matplotlib"] floating enable border normal
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -461,6 +467,6 @@ exec --no-startup-id zotero
 exec --no-startup-id telegram-desktop
 exec --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpeg
-exec --no-startup-id xinput set-prop "Synaptics TM2956-002" 318 1 #Set natural scrolling
+exec --no-startup-id xinput set-prop "Synaptics TM2956-002" "libinput Natural Scrolling Enabled" 1 
         #Random Keybindings
 bindsym $mod+Shift+s exec shutter -s
