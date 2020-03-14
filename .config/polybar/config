@@ -5,7 +5,7 @@
 
 ;====General Settings======================================
 [colors]
-bg = #222D32
+bg = #263238
 fg = #CFD8DC
 adapta-cyan = #00BCD4
 adapta-red = #FF5252
@@ -25,9 +25,9 @@ fixed-center = true
 line-size = 2
 background = ${colors.bg}
 foreground = ${colors.fg}
-font-0 = "Fantasque Sans Mono:pixelsize=10;3"
-font-1 = "Iosevka Nerd Font:pixelsize=14;3"
-font-2 = "Iosevka Nerd Font:pixelsize=11;3"
+font-0 = "Fantasque Sans Mono:pixelsize=14;3"
+font-1 = "UbuntuMono NF:pixelsize=18;3"
+font-2 = "UbuntuMono NF:pixelsize=22;3"
 cursor-click = pointer
 
 #Set tray options
@@ -44,9 +44,9 @@ tray-scale = 1.0
 
 
 ;====Module settings+======================================
-modules-left = arch i3
+modules-left = arch i3 filesytem pkg
 modules-center = date
-modules-right = pkg volume wlan cpu-graph memory powermenu
+modules-right = volume wlan cpu-graph memory battery powermenu
 ;==========================================================
 
 
@@ -271,6 +271,26 @@ content-margin = 1
 content-foreground = ${colors.fg}
 content-underline = ${colors.adapta-cyan}
 click-left = xdg-open https://www.youtube.com/ &
+
+[module/filesystem]
+type = internal/fs
+filesystem-type = HDD
+; Mountpoints to display
+mount-0 = /
+mount-1 = /home
+mount-2 = /var
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
 ;==========================================================
 
 
@@ -350,7 +370,7 @@ format-volume-margin = ${margin.for-modules}
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp1s0
 interval = 0.1
 format-connected = <label-connected>
 ;format-connected-background = ${colors.shade2}
@@ -411,8 +431,8 @@ label = %percentage_used:2%%
 [module/battery]
 type = internal/battery
 full-at = 99
-battery = CMB0
-adapter = ADP1
+battery = BAT0
+adapter = ADP0
 format-charging = <animation-charging> <label-charging>
 ;format-charging-background = ${colors.shade2}
 format-charging-underline = ${colors.adapta-cyan}
@@ -465,4 +485,5 @@ content-underline = ${colors.adapta-cyan}
 content-foreground = ${colors.fg}
 click-left = pmenu_1
 click-right = pmenu_1
+
 ;==========================================================
