@@ -215,6 +215,7 @@ assign [class="Zotero"] $ws4
 assign [class="Cisco AnyConnect Secure Mobility Client"] $ws5
 assign [class="Brave-browser"] $ws6
 assign [class="x2goclient"] $ws9
+assign [class="Chromium"] $ws8
 
 for_window [class="Spotify"] move to workspace $ws5
 
