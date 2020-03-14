@@ -370,7 +370,7 @@ format-volume-margin = ${margin.for-modules}
 
 [module/wlan]
 type = internal/network
-interface = wlp1s0
+interface = wlp2s0
 interval = 0.1
 format-connected = <label-connected>
 ;format-connected-background = ${colors.shade2}
