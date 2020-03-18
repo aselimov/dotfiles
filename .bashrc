@@ -153,7 +153,15 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+#Add git completion and git bash prompt
+source /usr/share/git/completion/git-completion.bash
+source /home/alexselimov/.bash_prompt
+
+#Source bashmarks
+source ~/.local/bin/bashmarks.sh
+
 #bash aliases
 alias config='/usr/bin/git --git-dir=/home/alexselimov/.cfg/ --work-tree=/home/alexselimov'
 alias octave=octave-cli
 alias gits='git status -uno'
+
