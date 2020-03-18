@@ -44,9 +44,9 @@ tray-scale = 1.0
 
 
 ;====Module settings+======================================
-modules-left = arch i3 filesytem pkg
+modules-left = arch i3 filesytem pkg taskwarrior
 modules-center = date
-modules-right = volume wlan cpu-graph memory battery powermenu
+modules-right = volume cpu-graph wlan memory battery powermenu
 ;==========================================================
 
 
@@ -215,63 +215,6 @@ content-foreground = ${colors.fg}
 content-underline = ${colors.adapta-cyan}
 click-left = nautilus &
 
-[module/google]
-type = custom/text
-content = 
-content-padding = 1
-;content-margin = 1
-content-foreground = ${colors.fg}
-content-underline = ${colors.adapta-cyan}
-click-left = xdg-open https://www.google.com/ &
-
-[module/amazon]
-type = custom/text
-content = 
-content-padding = 1
-content-margin = 1
-content-foreground = ${colors.fg}
-content-underline = ${colors.adapta-cyan}
-click-left = xdg-open https://www.amazon.co.jp/ &
-;click-left = xdg-open https://www.amazon.com/
-
-[module/github]
-type = custom/text
-content = 
-content-padding = 1
-;content-margin = 1
-content-foreground = ${colors.fg}
-content-underline = ${colors.adapta-cyan}
-click-left = xdg-open https://www.github.com/ &
-
-[module/reddit]
-type = custom/text
-content = 
-;content = 
-content-padding = 1
-content-margin = 1
-content-foreground = ${colors.fg}
-content-underline = ${colors.adapta-cyan}
-click-left = xdg-open https://www.reddit.com/ &
-
-[module/facebook]
-type = custom/text
-content = 
-content-padding = 1
-;content-margin = 1
-content-foreground = ${colors.fg}
-content-underline = ${colors.adapta-cyan}
-click-left = xdg-open https://www.facebook.com/ &
-
-[module/youtube]
-type = custom/text
-content = 
-;content = 
-content-padding = 1
-content-margin = 1
-content-foreground = ${colors.fg}
-content-underline = ${colors.adapta-cyan}
-click-left = xdg-open https://www.youtube.com/ &
-
 [module/filesystem]
 type = internal/fs
 filesystem-type = HDD
@@ -291,6 +234,16 @@ fixed-values = true
 ; Spacing between entries
 ; Default: 2
 spacing = 4
+
+[module/taskwarrior]
+interval = 30
+type = custom/script
+exec =echo " $(/home/alexselimov/.config/polybar/task_polybar.sh)"
+format = <label>
+format-foreground = "colors.fg" 
+label-underline = ${colors.adapta-cyan}
+label-padding=1
+#click-left = task "$((`cat /tmp/tw_polybar_id`))" done
 ;==========================================================
 
 
@@ -370,13 +323,15 @@ format-volume-margin = ${margin.for-modules}
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp1s0
 interval = 0.1
+accumulate-stats = true
+unknown-as-up = true
 format-connected = <label-connected>
 ;format-connected-background = ${colors.shade2}
 format-connected-underline = ${colors.adapta-cyan}
 format-connected-padding = 1
-label-connected =  %upspeed:9%  %downspeed:9%
+label-connected = " %essid% %signal%%"
 ;label-connected =  %upspeed:9%  %downspeed:9%
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 1
