@@ -65,5 +65,3 @@ set expandtab
 set number
 set cursorline
 
-"turn off bell
-set visualbell

@@ -206,6 +206,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 assign [class="Sublime_text"] $ws2
+assign [class="Subl3"] $ws2
 assign [class="qutebrowser"] $ws6
 assign [class="Ovito"] $ws7
 assign [class="ParaView"] $ws7
